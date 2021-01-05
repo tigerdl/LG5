@@ -7,3 +7,6 @@ class TestRegister:
 
     def test_register(self):
         assert self.main.goto_register().register()
+
+    def teardown(self):
+        self.main._driver.quit()
