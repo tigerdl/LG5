@@ -23,3 +23,7 @@ class ContactsPage(BaseDriver):
     def import_contacts(self):
         pass
 
+    #获取部门列表
+    def get_dep_list(self):
+        pass
+
