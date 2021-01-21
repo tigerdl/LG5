@@ -1,6 +1,9 @@
+from time import sleep
+
 from selenium.webdriver.common.by import By
 
 from page.basedriver import BaseDriver
+# from page.contacts_page import ContactsPage
 from page.contacts_page import ContactsPage
 
 
@@ -19,4 +22,5 @@ class HomePage(BaseDriver):
 
     def goto_contacts(self):
         self.driver.find_element(By.ID,"menu_contacts").click()
-        return ContactsPage
+        sleep(3)
+        return ContactsPage(self.driver)
