@@ -14,7 +14,7 @@ class ContactsPage(BaseDriver):
         pass
 
     #添加部门
-    def add_department(self):
+    def goto_add_department(self):
         self.driver.find_element(By.CSS_SELECTOR,".member_colLeft_top_addBtn").click()
         self.driver.find_element(By.CSS_SELECTOR,".js_create_party").click()
         return AddDepartmentPage
@@ -25,5 +25,9 @@ class ContactsPage(BaseDriver):
 
     #获取部门列表
     def get_dep_list(self):
-        pass
+        dep_list = self.driver.find_elements(By.CSS_SELECTOR,".jstree-anchor:nth-child(3)")
+        dep_name_list = []
+        for dep in dep_list:
+            dep_name_list.append(dep.text)
+        return dep_name_list
 

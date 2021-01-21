@@ -12,8 +12,8 @@ class AddDepartmentPage(BaseDriver):
     """
 
     #添加部门
-    def add_department(self):
-        self.driver.find_element(By.CSS_SELECTOR,".ww_inputText").send_keys("部门1")
+    def add_department(self,dep_name):
+        self.driver.find_element(By.CSS_SELECTOR,".ww_inputText").send_keys(dep_name)
         self.driver.find_element(By.CSS_SELECTOR,".jstree-anchor").click()
         self.driver.find_element(By.CSS_SELECTOR,".ww_btn_Blue").click()
         sleep(2)
