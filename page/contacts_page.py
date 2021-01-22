@@ -15,8 +15,8 @@ class ContactsPage(BaseDriver):
 
     #添加部门
     def goto_add_department(self):
-        self.driver.find_element(By.CSS_SELECTOR,".member_colLeft_top_addBtn").click()
-        self.driver.find_element(By.CSS_SELECTOR,".js_create_party").click()
+        self.driver.find_element(By.CSS_SELECTOR,".js_create_dropdown").find_element(By.CSS_SELECTOR,".js_create_party").click()
+        # self.driver.find_element(By.CSS_SELECTOR,".js_create_party").click()
         return AddDepartmentPage(self.driver)
 
     #导入通讯录
