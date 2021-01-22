@@ -7,7 +7,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 
 class BaseDriver:
 
-    def __init__(self,driver=None):
+    def __init__(self,driver = None):
         driver:WebDriver
         if driver is None:
             self.driver = webdriver.Chrome()
@@ -22,11 +22,15 @@ class BaseDriver:
         # cookies = self.driver.get_cookies()
         # with open("cookie.json","w") as f:
         #     json.dump(cookies,f)
-        self.driver.get("https://work.weixin.qq.com/wework_admin/frame")
-        # sleep(5)
+        # self.driver.get("https://work.weixin.qq.com/wework_admin/frame")
+        self.driver.get("https://work.weixin.qq.com/")
+        sleep(10)
         with open("cookie.json","r") as f:
             cookies = json.load(f)
-            for cookie in cookies:
-                self.driver.add_cookie(cookie)
+        for cookie in cookies:
+            self.driver.add_cookie(cookie)
         self.driver.get("https://work.weixin.qq.com/wework_admin/frame#index")
         self.driver.maximize_window()
+
+    def find_func(self,by,value):
+        return self.driver.find_element(by=by,value=value)

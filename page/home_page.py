@@ -21,6 +21,6 @@ class HomePage(BaseDriver):
         pass
 
     def goto_contacts(self):
-        self.driver.find_element(By.ID,"menu_contacts").click()
+        self.find_func(By.ID,"menu_contacts").click()
         sleep(3)
         return ContactsPage(self.driver)

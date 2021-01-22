@@ -1,3 +1,5 @@
+from time import sleep
+
 from selenium.webdriver.common.by import By
 
 from page.add_dep_page import AddDepartmentPage
@@ -15,7 +17,9 @@ class ContactsPage(BaseDriver):
 
     #添加部门
     def goto_add_department(self):
-        self.driver.find_element(By.CSS_SELECTOR,".js_create_dropdown").find_element(By.CSS_SELECTOR,".js_create_party").click()
+        self.find_func(By.CSS_SELECTOR,".js_create_dropdown").click()
+        sleep(1)
+        self.find_func(By.CSS_SELECTOR,".js_create_party").click()
         # self.driver.find_element(By.CSS_SELECTOR,".js_create_party").click()
         return AddDepartmentPage(self.driver)
 

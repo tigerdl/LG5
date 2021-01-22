@@ -13,9 +13,10 @@ class AddDepartmentPage(BaseDriver):
 
     #添加部门
     def add_department(self,dep_name):
-        self.driver.find_element(By.CSS_SELECTOR,".ww_inputText").send_keys(dep_name)
-        self.driver.find_element(By.CSS_SELECTOR,".jstree-anchor").click()
-        self.driver.find_element(By.CSS_SELECTOR,".ww_btn_Blue").click()
+        self.find_func(By.XPATH,'//*[@id="__dialog__MNDialog__"]/div/div[2]/div/form/div[1]/input').send_keys(dep_name)
+        self.find_func(By.XPATH,'//*[@id="__dialog__MNDialog__"]/div/div[2]/div/form/div[3]/a').click()
+        self.find_func(By.CSS_SELECTOR, '#__dialog__MNDialog__ [id="1688854136113206_anchor"]').click()
+        self.find_func(By.CSS_SELECTOR,'[d_ck=submit]').click()
         sleep(2)
         from page.contacts_page import ContactsPage
         return ContactsPage(self.driver)
