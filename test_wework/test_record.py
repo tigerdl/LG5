@@ -59,9 +59,9 @@ class TestWeWork:
         assert res.text == "外出打卡成功"
 
     def test_addmember(self):
-        name = "lili"
+        name = "lili1"
         gender = "男"
-        phonenumber = "15555555555"
+        phonenumber = "15585555555"
         self.driver.find_element(MobileBy.XPATH,"//*[@text='通讯录']").click()
         # self.driver.find_element(MobileBy.XPATH,"//*[@text='添加成员']").click()
         self.driver.find_element(MobileBy.ANDROID_UIAUTOMATOR,
@@ -78,17 +78,17 @@ class TestWeWork:
         # self.driver.find_element(MobileBy.XPATH,"//*[@resource-id='com.tencent.wework:id/boi']//*[@text='男']").click()
         self.driver.find_element(MobileBy.XPATH,"//*[@text='男']").click()
         if gender == "女":
-            self.driver.find_element(MobileBy.XPATH,"//*[text='女']").click()
+            self.driver.find_element(MobileBy.XPATH,"//*[@text='女']").click()
         else:
-            self.driver.find_element(MobileBy.XPATH,"//*[text='男']").click()
+            self.driver.find_element(MobileBy.XPATH,"//*[@text='男']").click()
         #输入电话
         # self.driver.find_element(MobileBy.XPATH,"//*[@resource-id='com.tencent.wework:id/f5y']//*[@class='android.widget.EditText']").send_keys("15555555555")
-        self.driver.find_element(MobileBy.ID,"com.tencent.wework:id/eq7").send_keys(phonenumber)
+        self.driver.find_element(MobileBy.ID,"com.tencent.wework:id/fuy").send_keys(phonenumber)
         #输入邮箱
         # self.driver.find_element(MobileBy.XPATH,"//*[@resource-id='com.tencent.wework:id/er1']//*[@class='android.widget.EditText']").send_keys("00000000@qq.com")
         #保存
         # self.driver.find_element(MobileBy.XPATH,"//*[@text='保存']").click()
-        self.driver.find_element(MobileBy.ID,"com.tencent.wework:id/qur").click()
+        self.driver.find_element(MobileBy.ID,"com.tencent.wework:id/ie7").click()
         #断言toast
         res = self.driver.find_element(MobileBy.XPATH,"//*[@class='android.widget.Toast']")
         assert res.text == "添加成功"
