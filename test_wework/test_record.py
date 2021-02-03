@@ -57,3 +57,14 @@ class TestWeWork:
         self.driver.find_element(MobileBy.XPATH,"//*[contains(@text,'次外出')]").click()
         res = self.driver.find_element(MobileBy.ID,"com.tencent.wework:id/pt")
         assert res.text == "外出打卡成功"
+
+    def test_addmember(self):
+        self.driver.find_element(MobileBy.XPATH,"//*[@text='通讯录']").click()
+        self.driver.find_element(MobileBy.XPATH,"//*[@text='添加成员']").click()
+        self.driver.find_element(MobileBy.XPATH,"//*[@text='手动输入添加']").click()
+        self.driver.find_element(MobileBy.XPATH,"//*[@resource-id='com.tencent.wework:id/ern']//*[@class='android.widget.EditText']").send_keys("lili")
+        self.driver.find_element(MobileBy.XPATH,"//*[@resource-id='com.tencent.wework:id/er7']//*[@class='android.widget.ImageView']").click()
+        self.driver.find_element(MobileBy.XPATH,"//*[@resource-id='com.tencent.wework:id/boi']//*[@text='男']").click()
+        self.driver.find_element(MobileBy.XPATH,"//*[@resource-id='com.tencent.wework:id/f5y']//*[@class='android.widget.EditText']").send_keys("15555555555")
+        self.driver.find_element(MobileBy.XPATH,"//*[@resource-id='com.tencent.wework:id/er1']//*[@class='android.widget.EditText']").send_keys("00000000@qq.com")
+        self.driver.find_element(MobileBy.XPATH,"//*[@text='保存']").click()
