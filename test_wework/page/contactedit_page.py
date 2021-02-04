@@ -12,13 +12,13 @@ from test_wework.page.basepage import BasePage
 
 class ContactEditPage(BasePage):
 
-    def edit_name(self,name):
-        self.find_and_sendkeys((MobileBy.XPATH, "//*[contains(@text,'姓名')]/../android.widget.EditText"),name)
+    def edit_name(self, name):
+        self.find_and_sendkeys((MobileBy.XPATH, "//*[contains(@text,'姓名')]/../android.widget.EditText"), name)
         return self
 
-    def edit_gender(self,gender):
+    def edit_gender(self, gender):
         locator = (MobileBy.XPATH, "//*[@text='男']")
-        ele = WebDriverWait(self.driver,10).until(expected_conditions.element_to_be_clickable(locator))
+        ele = WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_clickable(locator))
         ele.click()
         # self.driver.find_element(MobileBy.XPATH, "//*[@text='男']").click()
         if gender == "女":
@@ -27,8 +27,8 @@ class ContactEditPage(BasePage):
             self.find_and_click((MobileBy.XPATH, "//*[@text='男']"))
         return self
 
-    def edit_phonenum(self,phonenum):
-        self.find_and_sendkeys((MobileBy.ID, "com.tencent.wework:id/fuy"),phonenum)
+    def edit_phonenum(self, phonenum):
+        self.find_and_sendkeys((MobileBy.ID, "com.tencent.wework:id/fuy"), phonenum)
         return self
 
     def click_save(self):
