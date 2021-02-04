@@ -13,5 +13,8 @@ class TestContact:
         self.app.stop()
 
     def test_add_contact(self):
-        toast = self.main.click_addresslist().add_member().addconnect_menual().edit_gender().edit_name().edit_phonenum().click_save().get_toast()
+        name = "LLLLLL"
+        gender = "女"
+        phonenumber = "10000000005"
+        toast = self.main.click_addresslist().add_member().addconnect_menual().edit_gender(gender).edit_name(name).edit_phonenum(phonenumber).click_save().get_toast()
         assert toast == "添加成功"

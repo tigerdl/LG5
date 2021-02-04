@@ -6,12 +6,10 @@
 from appium.webdriver.common.mobileby import MobileBy
 
 from test_wework.page.addmember_page import AddmemberPage
+from test_wework.page.basepage import BasePage
 
 
-class MainPage:
-    def __init__(self, driver):
-        self.driver = driver
-
+class MainPage(BasePage):
     def click_addresslist(self):
         self.driver.find_element(MobileBy.XPATH, "//*[@text='通讯录']").click()
         return AddmemberPage(self.driver)
