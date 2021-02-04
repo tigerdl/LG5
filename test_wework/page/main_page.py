@@ -11,5 +11,5 @@ from test_wework.page.basepage import BasePage
 
 class MainPage(BasePage):
     def click_addresslist(self):
-        self.driver.find_element(MobileBy.XPATH, "//*[@text='通讯录']").click()
+        self.find_and_click((MobileBy.XPATH, "//*[@text='通讯录']"))
         return AddmemberPage(self.driver)

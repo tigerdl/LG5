@@ -7,13 +7,13 @@ from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
+from test_wework.page.basepage import BasePage
 
-class ContactEditPage:
-    def __init__(self, driver):
-        self.driver = driver
+
+class ContactEditPage(BasePage):
 
     def edit_name(self,name):
-        self.driver.find_element(MobileBy.XPATH, "//*[contains(@text,'姓名')]/../android.widget.EditText").send_keys(name)
+        self.find_and_sendkeys((MobileBy.XPATH, "//*[contains(@text,'姓名')]/../android.widget.EditText"),name)
         return self
 
     def edit_gender(self,gender):
@@ -22,16 +22,16 @@ class ContactEditPage:
         ele.click()
         # self.driver.find_element(MobileBy.XPATH, "//*[@text='男']").click()
         if gender == "女":
-            self.driver.find_element(MobileBy.XPATH, "//*[@text='女']").click()
+            self.find_and_click((MobileBy.XPATH, "//*[@text='女']"))
         else:
-            self.driver.find_element(MobileBy.XPATH, "//*[@text='男']").click()
+            self.find_and_click((MobileBy.XPATH, "//*[@text='男']"))
         return self
 
-    def edit_phonenum(self,phonenumber):
-        self.driver.find_element(MobileBy.ID, "com.tencent.wework:id/fuy").send_keys(phonenumber)
+    def edit_phonenum(self,phonenum):
+        self.find_and_sendkeys((MobileBy.ID, "com.tencent.wework:id/fuy"),phonenum)
         return self
 
     def click_save(self):
         from test_wework.page.memberinvite_page import MemberInvitePage
-        self.driver.find_element(MobileBy.ID, "com.tencent.wework:id/ie7").click()
+        self.find_and_click((MobileBy.ID, "com.tencent.wework:id/ie7"))
         return MemberInvitePage(self.driver)

@@ -11,9 +11,9 @@ from test_wework.page.contactedit_page import ContactEditPage
 
 class MemberInvitePage(BasePage):
     def addconnect_menual(self):
-        self.driver.find_element(MobileBy.XPATH, "//*[@text='手动输入添加']").click()
+        self.find_and_click((MobileBy.XPATH, "//*[@text='手动输入添加']"))
         return ContactEditPage(self.driver)
 
     def get_toast(self):
-        res = self.driver.find_element(MobileBy.XPATH, "//*[@class='android.widget.Toast']")
-        return res.text
+        res = self.find_and_gettext((MobileBy.XPATH, "//*[@class='android.widget.Toast']"))
+        return res
