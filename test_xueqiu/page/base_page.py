@@ -11,7 +11,11 @@ class BasePage:
         self.driver = driver
 
     def find(self, locator):
-        return self.driver.find_element(*locator)
+        try:
+            return self.driver.find_element(*locator)
+        except:
+            self.black_list_click()
+            return self.find(locator)
 
     # 获取yaml文件数据->list[dict]
     def get_test_data(self, filename):
@@ -33,3 +37,8 @@ class BasePage:
                         value: str = data["keys"]
                         ele.send_keys(value)
                         return ele
+
+    def black_list_click(self):
+        black_list: list[dict] = self.get_test_data("blackpage.yaml")
+        for black in black_list:
+            ele=self.steps("blackpage.yaml")
