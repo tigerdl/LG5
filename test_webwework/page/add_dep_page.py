@@ -2,7 +2,7 @@ from time import sleep
 
 from selenium.webdriver.common.by import By
 
-from page.basedriver import BaseDriver
+from test_webwework.page.basedriver import BaseDriver
 # from page.contacts_page import ContactsPage
 
 
@@ -18,5 +18,5 @@ class AddDepartmentPage(BaseDriver):
         self.find_func(By.CSS_SELECTOR, '#__dialog__MNDialog__ [id="1688854136113206_anchor"]').click()
         self.find_func(By.CSS_SELECTOR,'[d_ck=submit]').click()
         sleep(2)
-        from page.contacts_page import ContactsPage
+        from test_webwework.page.contacts_page import ContactsPage
         return ContactsPage(self.driver)

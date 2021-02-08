@@ -5,7 +5,7 @@
 import pytest
 import yaml
 
-from test_wework.page.app import App
+from test_appwework.page.app import App
 
 
 def get_data():
@@ -32,5 +32,6 @@ class TestContact:
         assert toast == "添加成功"
 
 # if __name__ == '__main__':
-#     test = TestContact()
-#     print(test.get_data()["add"])
+#     # test = TestContact()
+#     data = get_data()
+#     print(data)

@@ -5,8 +5,9 @@
 # 点击添加成员
 from appium.webdriver.common.mobileby import MobileBy
 
-from test_wework.page.basepage import BasePage
-from test_wework.page.memberinvite_page import MemberInvitePage
+
+from test_appwework.page.base_page import BasePage
+from test_appwework.page.memberinvite_page import MemberInvitePage
 
 
 class AddmemberPage(BasePage):

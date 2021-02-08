@@ -5,8 +5,8 @@
 # 启动appp、关闭app、重启App、进入首页。。。
 from appium import webdriver
 
-from test_wework.page.basepage import BasePage
-from test_wework.page.main_page import MainPage
+from test_appwework.page.base_page import BasePage
+from test_appwework.page.main_page import MainPage
 
 
 class App(BasePage):

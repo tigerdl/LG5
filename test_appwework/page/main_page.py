@@ -5,8 +5,8 @@
 # 点击通讯录
 from appium.webdriver.common.mobileby import MobileBy
 
-from test_wework.page.addmember_page import AddmemberPage
-from test_wework.page.basepage import BasePage
+from test_appwework.page.addmember_page import AddmemberPage
+from test_appwework.page.base_page import BasePage
 
 
 class MainPage(BasePage):

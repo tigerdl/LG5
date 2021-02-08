@@ -2,9 +2,9 @@ from time import sleep
 
 from selenium.webdriver.common.by import By
 
-from page.basedriver import BaseDriver
+from test_webwework.page.basedriver import BaseDriver
 # from page.contacts_page import ContactsPage
-from page.contacts_page import ContactsPage
+from test_webwework.page.contacts_page import ContactsPage
 
 
 class HomePage(BaseDriver):

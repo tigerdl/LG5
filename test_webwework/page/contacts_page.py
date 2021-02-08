@@ -2,8 +2,8 @@ from time import sleep
 
 from selenium.webdriver.common.by import By
 
-from page.add_dep_page import AddDepartmentPage
-from page.basedriver import BaseDriver
+from test_webwework.page.add_dep_page import AddDepartmentPage
+from test_webwework.page.basedriver import BaseDriver
 
 
 class ContactsPage(BaseDriver):

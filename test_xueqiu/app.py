@@ -3,7 +3,7 @@
 # @author :lidong
 from appium import webdriver
 
-from test_xueqiu.base_page import BasePage
+from test_xueqiu.page.base_page import BasePage
 from test_xueqiu.page.main_page import MainPage
 
 
@@ -21,6 +21,9 @@ class App(BasePage):
         else:
             self.driver.launch_app()
         return self
+
+    def quit(self):
+        self.driver.quit()
 
     def main(self):
         return MainPage(self.driver)

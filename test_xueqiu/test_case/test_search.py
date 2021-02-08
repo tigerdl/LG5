@@ -5,6 +5,7 @@ from test_xueqiu.app import App
 
 
 class TestSearch:
+
     def setup(self):
         self.app = App()
         self.main = self.app.start().main()
@@ -12,3 +13,6 @@ class TestSearch:
     def test_search(self):
         ele = self.main.goto_search().search()
         assert ele.text == "hello"
+
+    def teardown(self):
+        self.app.quit()

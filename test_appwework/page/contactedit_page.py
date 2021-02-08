@@ -7,7 +7,7 @@ from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-from test_wework.page.basepage import BasePage
+from test_wework.page.base_page import BasePage
 
 
 class ContactEditPage(BasePage):

@@ -1,4 +1,4 @@
-from page.home_page import HomePage
+from test_webwework.page.home_page import HomePage
 
 
 class TestAddDep:

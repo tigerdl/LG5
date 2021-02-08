@@ -5,8 +5,8 @@
 # 点击手动添加
 from appium.webdriver.common.mobileby import MobileBy
 
-from test_wework.page.basepage import BasePage
-from test_wework.page.contactedit_page import ContactEditPage
+from test_appwework.page.base_page import BasePage
+from test_appwework.page.contactedit_page import ContactEditPage
 
 
 class MemberInvitePage(BasePage):
