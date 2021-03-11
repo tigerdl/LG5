@@ -1,0 +1,5 @@
+get_token_url: 'https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wwf57613d8503cd14e&corpsecret=PVwEO62Zo-C16-WV6u4LxIciWDavHm0_QFWy4WdIg2Q'
+add_contacts_mem_url:  'https://qyapi.weixin.qq.com/cgi-bin/user/create'
+delete_contacts_mem_url:  'https://qyapi.weixin.qq.com/cgi-bin/user/delete'
+query_contacts_mem_url:  'https://qyapi.weixin.qq.com/cgi-bin/user/get'
+edit_contacts_mem_url:  'https://qyapi.weixin.qq.com/cgi-bin/user/update'
