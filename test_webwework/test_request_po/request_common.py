@@ -10,7 +10,7 @@ class Address(Base):
 
     def add_contacts_mem(self, userid, name, department, mobile):
         method = 'post'
-        add_contacts_mem_url = self.getdata.get_data('add_contacts_mem_url')
+        add_contacts_mem_url = self.getdata.get_data(self.getdata.inifilepath).get('add_contacts_mem_url')
         data = {
             "userid": userid,
             "name": name,
@@ -21,7 +21,7 @@ class Address(Base):
 
     def delete_contacts_mem(self, userid):
         method = 'get'
-        delete_contacts_mem_url = self.getdata.get_data('delete_contacts_mem_url')
+        delete_contacts_mem_url = self.getdata.get_data(self.getdata.inifilepath).get('delete_contacts_mem_url')
         params = {
             'userid': userid
         }
@@ -29,7 +29,7 @@ class Address(Base):
 
     def query_contacts_mem(self, userid):
         method = 'get'
-        query_contacts_mem_url = self.getdata.get_data('query_contacts_mem_url')
+        query_contacts_mem_url = self.getdata.get_data(self.getdata.inifilepath).get('query_contacts_mem_url')
         params = {
             'userid': userid
         }
@@ -37,7 +37,7 @@ class Address(Base):
 
     def edit_contacts_mem(self, userid, name):
         method = 'post'
-        edit_contacts_mem_url = self.getdata.get_data('edit_contacts_mem_url')
+        edit_contacts_mem_url = self.getdata.get_data(self.getdata.inifilepath).get('edit_contacts_mem_url')
         data = {
             'userid': userid,
             "name": name

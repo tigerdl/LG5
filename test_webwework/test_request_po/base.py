@@ -9,7 +9,7 @@ from test_webwework.test_request_po.get_data import GetData
 class Base:
     def __init__(self):
         self.getdata = GetData()
-        token_url = self.getdata.get_data('get_token_url')
+        token_url = self.getdata.get_data(self.getdata.inifilepath).get('get_token_url')
         r = requests.get(token_url)
         self.token = r.json()['access_token']
         self.s = requests.Session()

@@ -7,16 +7,21 @@ import yaml
 
 
 class GetData:
-    filepath = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    inifilepath = filepath + r'\test_webwework' + r'\test_request_po' + r'\url.yaml'
+    def __init__(self):
+        self.filepath = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        self.inifilepath = self.filepath + r'\test_webwework' + r'\test_request_po' + r'\url.yaml'
+        self.testdatafilepath = self.filepath + r'\test_webwework' + r'\test_request_po' + r'\test_data.yaml'
 
-    def get_data(self, url_name):
-        with open(self.inifilepath, 'r', encoding='utf-8') as f:
+    def get_data(self, filepath):
+        with open(filepath, encoding='utf-8') as f:
             r = yaml.safe_load(f)
-            # print(r.get(url_name, 'url不存在'))
-            return r.get(url_name, 'url不存在')
+            # print(r)
+            return r
 
 
 if __name__ == '__main__':
+    filepath = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    inifilepath = filepath + r'\test_webwework' + r'\test_request_po' + r'\url.yaml'
+    testdatafilepath = filepath + r'\test_webwework' + r'\test_request_po' + r'\test_data.yaml'
     getdata = GetData()
-    getdata.get_data('get_token_url')
+    getdata.get_data(testdatafilepath)

@@ -3,15 +3,18 @@
 # @author :lidong
 import pytest
 
+from test_webwework.test_request_po.get_data import GetData
 from test_webwework.test_request_po.request_common import Address
 
 
 class TestDemo:
-    def setup(self):
-        self.address = Address()
+    getdata=GetData()
+    address = Address()
+    # def setUp(self):
+    #     self.address = Address()
 
-    @pytest.mark.parametrize('userid, name, department, mobile',
-                             [('L1', 'L11', [1], 13333333333), ('L2', 'L2', [1], 13333333335)])
+
+    @pytest.mark.parametrize('userid, name, department, mobile', GetData().get_data(GetData().testdatafilepath))
     def test_add_contacts_mem(self, userid, name, department, mobile):
         self.address.delete_contacts_mem(userid)
         r = self.address.add_contacts_mem(userid, name, department, mobile)
